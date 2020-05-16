@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_c9f5d437601447a9a127a4c7e23eefca {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_c9f5d437601447a9a127a4c7e23eefca" ></div>
+        
+</body>
+<script>    
+    
+            var map_c9f5d437601447a9a127a4c7e23eefca = L.map(
+                "map_c9f5d437601447a9a127a4c7e23eefca",
+                {
+                    center: [10.8505, 76.2711],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 6,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_1d67cd0f642c4b29baece24e71c3214a = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_c9f5d437601447a9a127a4c7e23eefca);
+        
+    
+            var circle_16b0f2999c044d6b90f8b4893ccdcd89 = L.circle(
+                [10.038394700000001, 76.5074145180173],
+                {"bubblingMouseEvents": true, "color": "crimson", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "crimson", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11000.0, "stroke": true, "weight": 3}
+            ).addTo(map_c9f5d437601447a9a127a4c7e23eefca);
+        
+    
+        var popup_98187a7dbf45403c8e02107dbdc7e3b9 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a041e68f6c1d40de8244121682c73fa9 = $(`<div id="html_a041e68f6c1d40de8244121682c73fa9" style="width: 100.0%; height: 100.0%;">Ernakulam : Municipal water supply</div>`)[0];
+            popup_98187a7dbf45403c8e02107dbdc7e3b9.setContent(html_a041e68f6c1d40de8244121682c73fa9);
+        
+
+        circle_16b0f2999c044d6b90f8b4893ccdcd89.bindPopup(popup_98187a7dbf45403c8e02107dbdc7e3b9)
+        ;
+
+        
+    
+    
+            var circle_65b7b81e91f54f7d826cad6519d1c24b = L.circle(
+                [10.2383947, 76.7074145180173],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4500.0, "stroke": true, "weight": 3}
+            ).addTo(map_c9f5d437601447a9a127a4c7e23eefca);
+        
+    
+        var popup_69aafa16e3ca4e99a3537799a4fe246d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b98a4aa0053a4a8fa0ac40f08b4f7802 = $(`<div id="html_b98a4aa0053a4a8fa0ac40f08b4f7802" style="width: 100.0%; height: 100.0%;">Ernakulam : Night patrol</div>`)[0];
+            popup_69aafa16e3ca4e99a3537799a4fe246d.setContent(html_b98a4aa0053a4a8fa0ac40f08b4f7802);
+        
+
+        circle_65b7b81e91f54f7d826cad6519d1c24b.bindPopup(popup_69aafa16e3ca4e99a3537799a4fe246d)
+        ;
+
+        
+    
+    
+            var circle_f65fb56380144d79b688e67a7604ca35 = L.circle(
+                [10.038394700000001, 76.7074145180173],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3300.0, "stroke": true, "weight": 3}
+            ).addTo(map_c9f5d437601447a9a127a4c7e23eefca);
+        
+    
+        var popup_1d16c069268a4a3494bc9d6cc7000e2f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_bed3cf2e29b2481aba14e35ff3eb2d6e = $(`<div id="html_bed3cf2e29b2481aba14e35ff3eb2d6e" style="width: 100.0%; height: 100.0%;">Ernakulam : Free wifi</div>`)[0];
+            popup_1d16c069268a4a3494bc9d6cc7000e2f.setContent(html_bed3cf2e29b2481aba14e35ff3eb2d6e);
+        
+
+        circle_f65fb56380144d79b688e67a7604ca35.bindPopup(popup_1d16c069268a4a3494bc9d6cc7000e2f)
+        ;
+
+        
+    
+    
+            var circle_287fbefd9af740d09a9e9e2f97331d21 = L.circle(
+                [8.5058909, 76.9570481],
+                {"bubblingMouseEvents": true, "color": "crimson", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "crimson", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000.0, "stroke": true, "weight": 3}
+            ).addTo(map_c9f5d437601447a9a127a4c7e23eefca);
+        
+    
+        var popup_213e5f4429a047f7af40841787b84731 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a3dc4c20406d4f59add8a9bb422e8f37 = $(`<div id="html_a3dc4c20406d4f59add8a9bb422e8f37" style="width: 100.0%; height: 100.0%;">Trivandrum : Streetlight</div>`)[0];
+            popup_213e5f4429a047f7af40841787b84731.setContent(html_a3dc4c20406d4f59add8a9bb422e8f37);
+        
+
+        circle_287fbefd9af740d09a9e9e2f97331d21.bindPopup(popup_213e5f4429a047f7af40841787b84731)
+        ;
+
+        
+    
+    
+            var circle_479f4a2d1055485a911f824a8262d06c = L.circle(
+                [8.7058909, 77.1570481],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5500.0, "stroke": true, "weight": 3}
+            ).addTo(map_c9f5d437601447a9a127a4c7e23eefca);
+        
+    
+        var popup_304d63114f414c51b43d9d91d35f0776 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0aacb4da4c004af09a6d15164541b6eb = $(`<div id="html_0aacb4da4c004af09a6d15164541b6eb" style="width: 100.0%; height: 100.0%;">Trivandrum : Night patrol</div>`)[0];
+            popup_304d63114f414c51b43d9d91d35f0776.setContent(html_0aacb4da4c004af09a6d15164541b6eb);
+        
+
+        circle_479f4a2d1055485a911f824a8262d06c.bindPopup(popup_304d63114f414c51b43d9d91d35f0776)
+        ;
+
+        
+    
+    
+            var circle_57a17170cd2f4850bc3e16788172f2be = L.circle(
+                [8.5058909, 77.1570481],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4200.0, "stroke": true, "weight": 3}
+            ).addTo(map_c9f5d437601447a9a127a4c7e23eefca);
+        
+    
+        var popup_db798b71059e484bb4b944f19be3e49a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e27fc6ed0eaa420fb5b847892fba49c9 = $(`<div id="html_e27fc6ed0eaa420fb5b847892fba49c9" style="width: 100.0%; height: 100.0%;">Trivandrum : Metro rail services</div>`)[0];
+            popup_db798b71059e484bb4b944f19be3e49a.setContent(html_e27fc6ed0eaa420fb5b847892fba49c9);
+        
+
+        circle_57a17170cd2f4850bc3e16788172f2be.bindPopup(popup_db798b71059e484bb4b944f19be3e49a)
+        ;
+
+        
+    
+    
+            var circle_de92b62d8eb041e0b3f849be3e9dd226 = L.circle(
+                [10.5256264, 76.2132542],
+                {"bubblingMouseEvents": true, "color": "crimson", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "crimson", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7000.0, "stroke": true, "weight": 3}
+            ).addTo(map_c9f5d437601447a9a127a4c7e23eefca);
+        
+    
+        var popup_517d700ee96a4a72a2663c95f95b313f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e16196f64345418bab053939b6f63147 = $(`<div id="html_e16196f64345418bab053939b6f63147" style="width: 100.0%; height: 100.0%;">Thrissur : Municipal water supply</div>`)[0];
+            popup_517d700ee96a4a72a2663c95f95b313f.setContent(html_e16196f64345418bab053939b6f63147);
+        
+
+        circle_de92b62d8eb041e0b3f849be3e9dd226.bindPopup(popup_517d700ee96a4a72a2663c95f95b313f)
+        ;
+
+        
+    
+    
+            var circle_d8b90dea18d5422ca2abbb9aa83e5485 = L.circle(
+                [10.7256264, 76.4132542],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5500.0, "stroke": true, "weight": 3}
+            ).addTo(map_c9f5d437601447a9a127a4c7e23eefca);
+        
+    
+        var popup_a6268adeaf1b42c6acc7754617c0c08d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_adf0812873cb4f69853894c5e0df8a02 = $(`<div id="html_adf0812873cb4f69853894c5e0df8a02" style="width: 100.0%; height: 100.0%;">Thrissur : Night patrol</div>`)[0];
+            popup_a6268adeaf1b42c6acc7754617c0c08d.setContent(html_adf0812873cb4f69853894c5e0df8a02);
+        
+
+        circle_d8b90dea18d5422ca2abbb9aa83e5485.bindPopup(popup_a6268adeaf1b42c6acc7754617c0c08d)
+        ;
+
+        
+    
+    
+            var circle_22ee91cca19a46a2b84193023b57f308 = L.circle(
+                [10.5256264, 76.4132542],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4200.0, "stroke": true, "weight": 3}
+            ).addTo(map_c9f5d437601447a9a127a4c7e23eefca);
+        
+    
+        var popup_f47686bef4364102b21d32f9fd5be9b9 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_5f13175864b14f8e9010976e76bcbc2a = $(`<div id="html_5f13175864b14f8e9010976e76bcbc2a" style="width: 100.0%; height: 100.0%;">Thrissur : Metro rail services</div>`)[0];
+            popup_f47686bef4364102b21d32f9fd5be9b9.setContent(html_5f13175864b14f8e9010976e76bcbc2a);
+        
+
+        circle_22ee91cca19a46a2b84193023b57f308.bindPopup(popup_f47686bef4364102b21d32f9fd5be9b9)
+        ;
+
+        
+    
+    
+            var circle_f044835b542149f4a6b2da0a3b3e1c62 = L.circle(
+                [11.2446144, 75.7759372],
+                {"bubblingMouseEvents": true, "color": "crimson", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "crimson", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4000.0, "stroke": true, "weight": 3}
+            ).addTo(map_c9f5d437601447a9a127a4c7e23eefca);
+        
+    
+        var popup_f2ddebfd397a42aea70ad70bc96dde79 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_875cbc52faf74934ac72302351ae4b24 = $(`<div id="html_875cbc52faf74934ac72302351ae4b24" style="width: 100.0%; height: 100.0%;">Kozhikode : Road reconstruction</div>`)[0];
+            popup_f2ddebfd397a42aea70ad70bc96dde79.setContent(html_875cbc52faf74934ac72302351ae4b24);
+        
+
+        circle_f044835b542149f4a6b2da0a3b3e1c62.bindPopup(popup_f2ddebfd397a42aea70ad70bc96dde79)
+        ;
+
+        
+    
+    
+            var circle_3688d36fdf2743d3834075b8c6bc603f = L.circle(
+                [11.444614399999999, 75.9759372],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2500.0, "stroke": true, "weight": 3}
+            ).addTo(map_c9f5d437601447a9a127a4c7e23eefca);
+        
+    
+        var popup_523cd7d2343f45d79cb992f77b11802b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3cc9a458302c443795f28f785ff689d7 = $(`<div id="html_3cc9a458302c443795f28f785ff689d7" style="width: 100.0%; height: 100.0%;">Kozhikode : Traffic control</div>`)[0];
+            popup_523cd7d2343f45d79cb992f77b11802b.setContent(html_3cc9a458302c443795f28f785ff689d7);
+        
+
+        circle_3688d36fdf2743d3834075b8c6bc603f.bindPopup(popup_523cd7d2343f45d79cb992f77b11802b)
+        ;
+
+        
+    
+    
+            var circle_d9797aea768049fbafe0854600e201f0 = L.circle(
+                [11.2446144, 75.9759372],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2400.0, "stroke": true, "weight": 3}
+            ).addTo(map_c9f5d437601447a9a127a4c7e23eefca);
+        
+    
+        var popup_10108058611c40a49374bd8f158bc08e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7a9d6d2e785d4c34b72bcac0c88176cf = $(`<div id="html_7a9d6d2e785d4c34b72bcac0c88176cf" style="width: 100.0%; height: 100.0%;">Kozhikode : Free wifi</div>`)[0];
+            popup_10108058611c40a49374bd8f158bc08e.setContent(html_7a9d6d2e785d4c34b72bcac0c88176cf);
+        
+
+        circle_d9797aea768049fbafe0854600e201f0.bindPopup(popup_10108058611c40a49374bd8f158bc08e)
+        ;
+
+        
+    
+</script>
