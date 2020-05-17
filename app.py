@@ -23,10 +23,7 @@ data= pd.read_csv('./CitizenNeeds.csv')
 
 @app.route('/')
 def hello():
-    new = 2 
-    url = "./mymap.html"
-    webbrowser.open(url, new=new)
-    return "Hello haseenA"
+    return "Hello haseena"
 
 @app.route('/map.html')
 def show_map():
