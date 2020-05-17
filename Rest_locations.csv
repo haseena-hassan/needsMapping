@@ -1,0 +1,5 @@
+Name,count,geo_loc,lat,lon,basic,std,prm,count_basic,count_std,count_prm
+Ernakulam,35.0,"(10.038394700000001, 76.5074145180173)",10.038394700000001,76.5074145180173,Municipal water supply,Night patrol,Free wifi,11.0,9.0,11.0
+Trivandrum,30.0,"(8.5058909, 76.9570481)",8.5058909,76.9570481,Streetlight,Night patrol,Metro rail services,10.0,11.0,14.0
+Thrissur,19.0,"(10.5256264, 76.2132542)",10.5256264,76.2132542,Municipal water supply,Night patrol,Metro rail services,7.0,11.0,14.0
+Kozhikode,16.0,"(11.2446144, 75.7759372)",11.2446144,75.7759372,Road reconstruction,Traffic control,Free wifi,4.0,5.0,8.0
