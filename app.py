@@ -71,7 +71,7 @@ def show_map():
 
 @app.route('/barplot-basic')
 def get_image1():
-    plt.figure(figsize=(6,3))
+    plt.figure(figsize=(15,8))
     chains=data['Basic Need'].value_counts()
     sns.barplot(x=chains,y=chains.index,palette='rocket')
     plt.title("Density plot of Basic Need in Kerala")
@@ -81,7 +81,7 @@ def get_image1():
 
 @app.route('/barplot-standard')
 def get_image2():
-    plt.figure(figsize=(6,3))
+    plt.figure(figsize=(15,8))
     chains=data['Standard Need'].value_counts()
     sns.barplot(x=chains,y=chains.index,palette='rocket')
     plt.title("Density plot of Standard Need in Kerala")
@@ -91,7 +91,7 @@ def get_image2():
 
 @app.route('/barplot-premium')
 def get_image3():
-    plt.figure(figsize=(6,3))
+    plt.figure(figsize=(15,8))
     chains=data['Premium Need'].value_counts()
     sns.barplot(x=chains,y=chains.index,palette='rocket')
     plt.title("Density plot of Premium Need in Kerala")
