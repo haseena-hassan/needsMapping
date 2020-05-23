@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, Response, jsonify, send_file
 app = Flask(__name__, static_url_path='')
 
 import numpy as np  
@@ -10,20 +10,38 @@ import folium
 import webbrowser
 import io
 import random
-import flask
-from flask import Response
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
-from matplotlib.figure import Figure
-from flask import send_file
 
 
-pd.pandas.set_option('display.max_columns', None)
+
 data= pd.read_csv('./CitizenNeeds.csv')
 
 
-@app.route('/')
-def hello():
-    return "Hello haseena"
+# @app.route('/<name>')
+# def hello(name):
+#     return "Hello {}!".format(name)
+
+@app.route('/post_survey', methods=['POST'])
+def get_data():
+    data = request.get_json()
+    return "Survey updated", 201
+
+@app.route('/get_dept')
+def send_data():
+
+    data = []
+    return jsonify({'data' : data})
+
+
+# @app.route('/q')
+# def query_example():
+#     language = request.args.get('key') #if key doesn't exist, returns None
+#     return '''<h1>The language value is: {}</h1>'''.format(key)
+
+# @app.route('/result', methods = ['POST'])
+# def result():
+#     id = request.json
+#     return "Hello {}!".format(id)
 
 @app.route('/map.html')
 def show_map():
@@ -99,16 +117,6 @@ def get_image3():
     plt.savefig('./plot-premium.png')
     return send_file('./plot-premium.png', mimetype='image/png')
 
-
-# @app.route('/<name>')
-# def hello_name(name):
-#     plt.figure()
-#     chains=data['Basic Need'].value_counts()
-#     sns.barplot(x=chains,y=chains.index,palette='rocket')
-#     plt.title("Density plot of Basic Need in Kerala")
-#     plt.xlabel("Number of citizens opted")
-#     plt.show()
-#     return "Hello {}!".format(name)
 
 
 if __name__ == '__main__':
