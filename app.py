@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, Response, jsonify, send_file
+from flask import Flask, render_template, request, Response, jsonify, send_file, Response, json
 import requests
 app = Flask(__name__, static_url_path='')
 
@@ -12,6 +12,7 @@ import webbrowser
 import io
 import random
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
+import json
 
 
 data= pd.read_csv('./CitizenNeeds.csv')
@@ -24,11 +25,11 @@ m = {}
 for i in map_data['District']:
     val = districts.str.contains(i)
     n = data[val]['Basic Need'].value_counts()
-    k['basic'] = n
+    k['basic'] = n.to_dict()
     n = data[val]['Standard Need'].value_counts()
-    k['Standard'] = n
+    k['Standard'] = n.to_dict()
     n = data[val]['Premium Need'].value_counts()
-    k['Premium'] = n
+    k['Premium'] = n.to_dict()
     m[i] = k
 
 
@@ -41,9 +42,22 @@ def get_data():
     data = request.get_json()
     return "Survey updated", 201
 
-@app.route('/get_dept')
+@app.route('/get_dept', methods = ['GET'])
 def send_data():
-    return n
+    # # m.to_json()
+    # # js = json.dumps(m)
+
+    # # resp = Response(m, status=200, mimetype='application/json')
+    
+    # appDict = {
+    # 'name': 'messenger',
+    # 'playstore': True,
+    # 'company': 'Facebook',
+    # 'price': {'Free wifi': 8, 'Tourist Resorts': 3, 'Metro rail services': 2, 'Turf': 1, 'Theatre': 1, 'Gym': 1}
+    # }
+    # app_json = json.dumps(appDict)
+    app_json = json.dumps(m)
+    return app_json
 
 
 
