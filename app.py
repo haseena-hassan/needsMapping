@@ -12,9 +12,10 @@ import io
 import random
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 import json
-
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 
 data= pd.read_csv('./CitizenNeeds.csv')
@@ -45,6 +46,7 @@ def get_data():
     return "Survey updated", 201
 
 @app.route('/get_dept', methods = ['GET'])
+@cross_origin()
 def send_data():
 
     app_json = json.dumps(m)
