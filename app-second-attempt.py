@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request, Response, jsonify, send_file
-import requests
 app = Flask(__name__, static_url_path='')
 
 import numpy as np  
@@ -12,29 +11,51 @@ import webbrowser
 import io
 import random
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
+from geopy.exc import GeocoderTimedOut
 
+def do_geocode(address, attempt=1, max_attempts=5):
+    try:
+        return geolocator.geocode(address)
+    except GeocoderTimedOut:
+        if attempt <= max_attempts:
+            return do_geocode(address, attempt=attempt+1)
+        raise
 
 data= pd.read_csv('./CitizenNeeds.csv')
+locations= pd.read_csv('./locations.csv')
+
 map_data = pd.DataFrame(data['District'].value_counts().reset_index())
 map_data.columns=['District','count']
+map_data=map_data.merge(locations,on='District',how="left").dropna()
+print(map_data)
+lat,lon=zip(*np.array(map_data['geo_loc']))
+map_data['lat'], map_data['lon'] =lat, lon
+need, count = [[], [], []], [[], [], []]
 districts = data['District']
-n = {}
-k = {}
-m = {}
 for i in map_data['District']:
     val = districts.str.contains(i)
-    n = data[val]['Basic Need'].value_counts()
-    k['basic'] = n
-    n = data[val]['Standard Need'].value_counts()
-    k['Standard'] = n
-    n = data[val]['Premium Need'].value_counts()
-    k['Premium'] = n
-    m[i] = k
+    basic = data[val]['Basic Need'].value_counts()
+    need[0].append(basic.index[0])
+    count[0].append(float(basic[0]))
+    standard = data[val]['Standard Need'].value_counts()
+    need[1].append(standard.index[0])
+    count[1].append(float(standard[0]))
+    premium = data[val]['Premium Need'].value_counts()
+    need[2].append(premium.index[0])
+    count[2].append(float(premium[0]))
 
+map_data['basic'] = need[0]
+map_data['std'] = need[1]
+map_data['prm'] = need[2]
+map_data['count_basic'] = count[0]
+map_data['count_std'] = count[1]
+map_data['count_prm'] = count[2]
+map_data.to_csv('map_data.csv',index=False)
 
-# @app.route('/<name>')
-# def hello(name):
-#     return "Hello {}!".format(name)
+@app.route('/start')
+def hello():
+
+    return "Hello {}!".format("world")
 
 @app.route('/post_survey', methods=['POST'])
 def get_data():
@@ -43,7 +64,9 @@ def get_data():
 
 @app.route('/get_dept')
 def send_data():
-    return n
+
+    data = []
+    return jsonify({'data' : data})
 
 
 
@@ -51,7 +74,7 @@ def send_data():
 @app.route('/map.html')
 def show_map():
     data= pd.read_csv('./CitizenNeeds.csv')
-    Rest_locations= pd.read_csv('./Rest_locations.csv')
+    Rest_locations= pd.read_csv('./map_data.csv')
     data = pd.DataFrame({
     'lat':Rest_locations['lat'],
     'lon':Rest_locations['lon'],
@@ -122,13 +145,7 @@ def get_image3():
     plt.savefig('./plot-premium.png')
     return send_file('./plot-premium.png', mimetype='image/png')
 
-@app.route('/weather')
-def index():
-    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid=f2eed327f2863e731aa1d68dd550548a'
-    city = 'London'
-    r = requests.get(url.format(city)).json()
-    print(r)
+
 
 if __name__ == '__main__':
-    app.debug = True
     app.run()
