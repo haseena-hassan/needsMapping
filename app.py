@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request, Response, jsonify, send_file, Response, json
 import requests
-app = Flask(__name__, static_url_path='')
 
 import numpy as np  
 import pandas as pd
@@ -13,6 +12,11 @@ import io
 import random
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 import json
+
+from flask_cors import CORS, cross_origin
+
+app = Flask(__name__)
+CORS(app, support_credentials=True)
 
 
 data= pd.read_csv('./CitizenNeeds.csv')
@@ -44,18 +48,7 @@ def get_data():
 
 @app.route('/get_dept', methods = ['GET'])
 def send_data():
-    # # m.to_json()
-    # # js = json.dumps(m)
 
-    # # resp = Response(m, status=200, mimetype='application/json')
-    
-    # appDict = {
-    # 'name': 'messenger',
-    # 'playstore': True,
-    # 'company': 'Facebook',
-    # 'price': {'Free wifi': 8, 'Tourist Resorts': 3, 'Metro rail services': 2, 'Turf': 1, 'Theatre': 1, 'Gym': 1}
-    # }
-    # app_json = json.dumps(appDict)
     app_json = json.dumps(m)
     return app_json
 
@@ -144,5 +137,6 @@ def index():
     print(r)
 
 if __name__ == '__main__':
-    app.debug = True
-    app.run()
+    app.run(host='0.0.0.0', port=8000, debug=True)
+
+    
