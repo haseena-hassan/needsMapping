@@ -13,10 +13,8 @@ import random
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 import json
 
-from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
-CORS(app, support_credentials=True)
 
 
 data= pd.read_csv('./CitizenNeeds.csv')
