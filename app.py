@@ -22,10 +22,10 @@ data= pd.read_csv('./CitizenNeeds.csv')
 map_data = pd.DataFrame(data['District'].value_counts().reset_index())
 map_data.columns=['District','count']
 districts = data['District']
-n = {}
-k = {}
 m = {}
 for i in map_data['District']:
+    n = {}
+    k = {}
     val = districts.str.contains(i)
     n = data[val]['Basic Need'].value_counts()
     k['basic'] = n.to_dict()
