@@ -45,8 +45,7 @@ def get_data():
     data = request.get_json()
     return "Survey updated", 201
 
-@app.route('/get_dept', methods = ['GET'])
-@cross_origin()
+@app.route('/get_dept')
 def send_data():
 
     app_json = json.dumps(m)
