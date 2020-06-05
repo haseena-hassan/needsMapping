@@ -15,7 +15,7 @@ import json
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app, resources={r"/api/*": {"origins": "*"}})
+CORS(app, resources={r"/get_dept/*": {"origins": "*"}})
 
 
 data= pd.read_csv('./CitizenNeeds.csv')
@@ -45,7 +45,7 @@ def get_data():
     data = request.get_json()
     return "Survey updated", 201
 
-@app.route('/api/get_dept')
+@app.route('/get_dept')
 def send_data():
 
     app_json = json.dumps(m)
@@ -134,6 +134,7 @@ def index():
     city = 'London'
     r = requests.get(url.format(city)).json()
     print(r)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
